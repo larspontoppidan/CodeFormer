@@ -4,21 +4,21 @@ import argparse
 import glob
 import torch
 from torchvision.transforms.functional import normalize
-from basicsr.utils import imwrite, img2tensor, tensor2img
-from basicsr.utils.download_util import load_file_from_url
+from basicsrcf.utils import imwrite, img2tensor, tensor2img
+from basicsrcf.utils.download_util import load_file_from_url
 from facelib.utils.face_restoration_helper import FaceRestoreHelper
 from facelib.utils.misc import is_gray
 import torch.nn.functional as F
 
-from basicsr.utils.registry import ARCH_REGISTRY
+from basicsrcf.utils.registry import ARCH_REGISTRY
 
 pretrain_model_url = {
     'restoration': 'https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth',
 }
 
 def set_realesrgan():
-    from basicsr.archs.rrdbnet_arch import RRDBNet
-    from basicsr.utils.realesrgan_utils import RealESRGANer
+    from basicsrcf.archs.rrdbnet_arch import RRDBNet
+    from basicsrcf.utils.realesrgan_utils import RealESRGANer
 
     cuda_is_available = torch.cuda.is_available()
     half = True if cuda_is_available else False

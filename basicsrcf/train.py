@@ -8,14 +8,14 @@ import time
 import torch
 from os import path as osp
 
-from basicsr.data import build_dataloader, build_dataset
-from basicsr.data.data_sampler import EnlargedSampler
-from basicsr.data.prefetch_dataloader import CPUPrefetcher, CUDAPrefetcher
-from basicsr.models import build_model
-from basicsr.utils import (MessageLogger, check_resume, get_env_info, get_root_logger, init_tb_logger,
+from basicsrcf.data import build_dataloader, build_dataset
+from basicsrcf.data.data_sampler import EnlargedSampler
+from basicsrcf.data.prefetch_dataloader import CPUPrefetcher, CUDAPrefetcher
+from basicsrcf.models import build_model
+from basicsrcf.utils import (MessageLogger, check_resume, get_env_info, get_root_logger, init_tb_logger,
                            init_wandb_logger, make_exp_dirs, mkdir_and_rename, set_random_seed)
-from basicsr.utils.dist_util import get_dist_info, init_dist
-from basicsr.utils.options import dict2str, parse
+from basicsrcf.utils.dist_util import get_dist_info, init_dist
+from basicsrcf.utils.options import dict2str, parse
 
 import warnings
 # ignore UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`.
@@ -54,7 +54,7 @@ def parse_options(root_path, is_train=True):
 
 def init_loggers(opt):
     log_file = osp.join(opt['path']['log'], f"train_{opt['name']}.log")
-    logger = get_root_logger(logger_name='basicsr', log_level=logging.INFO, log_file=log_file)
+    logger = get_root_logger(logger_name='basicsrcf', log_level=logging.INFO, log_file=log_file)
     logger.info(get_env_info())
     logger.info(dict2str(opt))
 

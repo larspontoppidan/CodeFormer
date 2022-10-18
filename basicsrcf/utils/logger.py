@@ -85,7 +85,7 @@ def init_tb_logger(log_dir):
 def init_wandb_logger(opt):
     """We now only use wandb to sync tensorboard log."""
     import wandb
-    logger = logging.getLogger('basicsr')
+    logger = logging.getLogger('basicsrcf')
 
     project = opt['logger']['wandb']['project']
     resume_id = opt['logger']['wandb'].get('resume_id')
@@ -102,13 +102,13 @@ def init_wandb_logger(opt):
     logger.info(f'Use wandb logger with id={wandb_id}; project={project}.')
 
 
-def get_root_logger(logger_name='basicsr', log_level=logging.INFO, log_file=None):
+def get_root_logger(logger_name='basicsrcf', log_level=logging.INFO, log_file=None):
     """Get the root logger.
     The logger will be initialized if it has not been initialized. By default a
     StreamHandler will be added. If `log_file` is specified, a FileHandler will
     also be added.
     Args:
-        logger_name (str): root logger name. Default: 'basicsr'.
+        logger_name (str): root logger name. Default: 'basicsrcf'.
         log_file (str | None): The log filename. If specified, a FileHandler
             will be added to the root logger.
         log_level (int): The root logger level. Note that only the process of
@@ -149,7 +149,7 @@ def get_env_info():
     import torch
     import torchvision
 
-    from basicsr.version import __version__
+    from basicsrcf.version import __version__
     msg = r"""
                 ____                _       _____  ____
                / __ ) ____ _ _____ (_)_____/ ___/ / __ \

@@ -9,7 +9,7 @@ import time
 import torch
 from torch.utils.cpp_extension import BuildExtension, CppExtension, CUDAExtension
 
-version_file = './basicsr/version.py'
+version_file = './basicsrcf/version.py'
 
 
 def readme():
@@ -66,7 +66,7 @@ __gitsha__ = '{}'
 version_info = ({})
 """
     sha = get_hash()
-    with open('./basicsr/VERSION', 'r') as f:
+    with open('./basicsrcf/VERSION', 'r') as f:
         SHORT_VERSION = f.read().strip()
     VERSION_INFO = ', '.join([x if x.isdigit() else f'"{x}"' for x in SHORT_VERSION.split('.')])
 
@@ -138,7 +138,7 @@ if __name__ == '__main__':
 
     write_version_py()
     setup(
-        name='basicsr',
+        name='basicsrcf',
         version=get_version(),
         description='Open Source Image and Video Super-Resolution Toolbox',
         long_description=readme(),

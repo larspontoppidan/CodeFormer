@@ -14,10 +14,10 @@ try:
 except Exception:
     print('please install cog package')
 
-from basicsr.utils import imwrite, img2tensor, tensor2img
-from basicsr.archs.rrdbnet_arch import RRDBNet
-from basicsr.utils.realesrgan_utils import RealESRGANer
-from basicsr.utils.registry import ARCH_REGISTRY
+from basicsrcf.utils import imwrite, img2tensor, tensor2img
+from basicsrcf.archs.rrdbnet_arch import RRDBNet
+from basicsrcf.utils.realesrgan_utils import RealESRGANer
+from basicsrcf.utils.registry import ARCH_REGISTRY
 from facelib.utils.face_restoration_helper import FaceRestoreHelper
 
 

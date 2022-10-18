@@ -74,7 +74,7 @@ conda activate codeformer
 
 # install python dependencies
 pip3 install -r requirements.txt
-python basicsr/setup.py develop
+python basicsrcf/setup.py develop
 ```
 <!-- conda install -c conda-forge dlib -->
 
